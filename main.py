@@ -42,7 +42,8 @@ class SoftwareRender:
                 elif line.startswith('f'):
                     faces_ = line.split()[1:]
                     faces.append([int(face_.split('/')[0]) - 1 for face_ in faces_])
-        return Object3D(self, vertex, faces)
+        return Object3D(self, list(vertex), list(faces))
+
         
         
     def draw(self):

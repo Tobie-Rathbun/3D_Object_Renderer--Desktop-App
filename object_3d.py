@@ -10,11 +10,12 @@ def any_func(arr, a, b):
 class Object3D:
     def __init__(self, render, vertexes, faces):
         self.render = render
+        self.vertexes = np.array([np.array(v) for v in vertexes])
+        self.faces = np.array(faces, dtype=object)
         # self.vertexes = np.array([(0, 0, 0, 1), (0, 1, 0, 1), (1, 1, 0, 1), (1, 0, 0, 1),
                                 #   (0, 0, 1, 1), (0, 1, 1, 1), (1, 1, 1, 1), (1, 0, 1, 1)])
         # self.faces = np.array([(0, 1, 2, 3), (4, 5, 6, 7), (0, 4, 5, 1), (2, 3, 7, 6), (1, 2, 6, 5), (0, 3, 7, 4)])
-        self.vertexes = np.array([np.array(v) for v in vertexes])
-        self.faces = np.array([np.array(face) for face in faces])
+        # Old manual method
         
       
         self.font = pg.font.SysFont('Arial', 30, bold=True)
